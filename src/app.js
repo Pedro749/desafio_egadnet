@@ -4,6 +4,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import homeRoutes from './routes/homeRoutes';
 import cepRoutes from './routes/cepRoutes';
+import tokenRoutes from './routes/tokenRoutes';
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ class App {
   routes() {
     this.app.use('/', homeRoutes);
     this.app.use('/cep', cepRoutes);
+    this.app.use('/token', tokenRoutes);
   }
 }
 
