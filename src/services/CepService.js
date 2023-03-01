@@ -1,42 +1,46 @@
 import ViacCep from '../api/ViaCep';
 
 class CepService {
+  #body = null;
+
+  #cep = null;
+
   constructor(requestBody) {
-    this.body = requestBody;
-    this.cep = '';
+    this.#body = requestBody;
+    this.#cep = '';
   }
 
   async fetch() {
-    this.validParams();
+    this.#validParams();
     const viaCep = new ViacCep();
-    viaCep.setCep(this.cep);
+    viaCep.setCep(this.#cep);
 
     const data = await viaCep.fetchApiData();
 
-    return this.treatsNotFound(data);
+    return this.#treatsNotFound(data);
   }
 
-  validParams() {
-    if (!this.body.cep) {
+  #validParams() {
+    if (!this.#body.cep) {
       throw new Error('Param cep not found!');
     }
 
-    if (!this.isValidCep()) {
+    if (!this.#isValidCep()) {
       throw new Error('Invalid cep!');
     }
   }
 
-  isValidCep() {
-    this.cep = this.body.cep.replace(/\D/g, '');
+  #isValidCep() {
+    this.#cep = this.#body.cep.replace(/\D/g, '');
 
-    if (this.cep.length !== 8) {
+    if (this.#cep.length !== 8) {
       return false;
     }
 
     return true;
   }
 
-  treatsNotFound(cep) {
+  #treatsNotFound(cep) {
     if (cep.erro) {
       return {
         message: 'CEP not found!',

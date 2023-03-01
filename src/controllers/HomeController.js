@@ -1,6 +1,6 @@
 class HomeController {
   async index(request, response) {
-    response.json('Welcome to Egadnet Chalenge!');
+    return response.json('Welcome to Egadnet Chalenge!');
   }
 }
 

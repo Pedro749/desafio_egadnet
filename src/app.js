@@ -6,24 +6,35 @@ import cepRoutes from './routes/cepRoutes';
 import tokenRoutes from './routes/tokenRoutes';
 
 class App {
-  constructor() {
-    this.app = express();
-    this.middlewares();
-    this.routes();
+  #server = null;
+
+  #port = null;
+
+  constructor(port) {
+    this.#server = express();
+    this.#port = port;
+    this.#middlewares();
+    this.#routes();
   }
 
-  middlewares() {
-    this.app.use(cors());
-    this.app.use(helmet());
-    this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.json());
+  start() {
+    this.#middlewares();
+    this.#routes();
+    this.#server.listen(this.#port);
   }
 
-  routes() {
-    this.app.use('/', homeRoutes);
-    this.app.use('/cep', cepRoutes);
-    this.app.use('/token', tokenRoutes);
+  #middlewares() {
+    this.#server.use(cors());
+    this.#server.use(helmet());
+    this.#server.use(express.urlencoded({ extended: true }));
+    this.#server.use(express.json());
+  }
+
+  #routes() {
+    this.#server.use('/', homeRoutes);
+    this.#server.use('/cep', cepRoutes);
+    this.#server.use('/token', tokenRoutes);
   }
 }
 
-export default new App().app;
+export default App;
