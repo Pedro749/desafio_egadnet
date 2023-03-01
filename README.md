@@ -27,7 +27,7 @@ Teste de habilidade.
 
 Um arquivo .har está disponível na pasta **files**, podendo ser importado para o Insomnia.
 
-Use o comando curl abaixo para testar ou utilize o importando-o no Insomnia ou Postman
+Use o comando curl abaixo para testar ou utilize o importando no Insomnia ou Postman
 
 **_Criando TOKEN_**
 
