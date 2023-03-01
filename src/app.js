@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import homeRoutes from './routes/homeRoutes';
+import cepRoutes from './routes/cepRoutes';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ class App {
 
   routes() {
     this.app.use('/', homeRoutes);
+    this.app.use('/cep', cepRoutes);
   }
 }
 
