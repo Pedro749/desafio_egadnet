@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import tokenConfig from '../config/tokenConfig';
 
 class TokenService {
   constructor(requestBody) {
@@ -9,12 +10,13 @@ class TokenService {
     this.validParams();
 
     const { email } = this.body;
+    console.log(tokenConfig.TOKEN_SECRET);
 
-    const token = jwt.sign({ email }, process.env.TOKEN_SECRET, {
-      expiresIn: process.env.TOKEN_EXPIRATION,
+    const token = jwt.sign({ email }, tokenConfig.TOKEN_SECRET, {
+      expiresIn: tokenConfig.TOKEN_EXPIRATION,
     });
 
-    return { token, expiresIn: process.env.TOKEN_EXPIRATION };
+    return { token, expiresIn: tokenConfig.TOKEN_EXPIRATION };
   }
 
   validParams() {

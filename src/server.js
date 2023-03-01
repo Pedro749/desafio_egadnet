@@ -1,4 +1,4 @@
 import app from './app';
+import appConfig from './config/appConfig';
 
-const port = process.env.APP_PORT;
-app.listen(port);
+app.listen(appConfig.port);

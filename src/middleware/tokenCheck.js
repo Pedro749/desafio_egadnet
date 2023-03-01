@@ -1,4 +1,5 @@
 import { verify } from 'jsonwebtoken';
+import tokenConfig from '../config/tokenConfig';
 
 export default async (request, response, next) => {
   try {
@@ -10,7 +11,7 @@ export default async (request, response, next) => {
 
     const [, token] = authorization.split(' ');
 
-    verify(token, process.env.TOKEN_SECRET);
+    verify(token, tokenConfig.TOKEN_SECRET);
 
     return next();
   } catch (erro) {
