@@ -45,7 +45,8 @@ Com o token faça...
 ```curl
 curl --request POST \
   --url http://localhost:3001/cep \
-  --header 'Authorization: Bearer ${{TOKEN}}\
+  --header 'Authorization: Bearer {{TOKEN}}' \
+  --header 'Content-Type: application/json' \
   --data '{
 	"cep": "89120000"
 }'
