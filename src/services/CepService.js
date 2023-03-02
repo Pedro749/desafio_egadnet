@@ -1,4 +1,5 @@
 import ViacCep from '../api/ViaCep';
+import AppError from '../errors/AppError';
 
 class CepService {
   #body = null;
@@ -16,17 +17,16 @@ class CepService {
     viaCep.setCep(this.#cep);
 
     const data = await viaCep.fetchApiData();
-
     return this.#treatsNotFound(data);
   }
 
   #validParams() {
     if (!this.#body.cep) {
-      throw new Error('Param cep not found!');
+      throw new AppError('Param cep not found!');
     }
 
     if (!this.#isValidCep()) {
-      throw new Error('Invalid cep!');
+      throw new AppError('Invalid cep!');
     }
   }
 

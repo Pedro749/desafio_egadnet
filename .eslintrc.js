@@ -4,8 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: 'airbnb-base',
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -13,6 +12,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'class-methods-use-this': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'no-param-reassign': 'off',
     'linebreak-style': 'off',
     camelcase: 'off',

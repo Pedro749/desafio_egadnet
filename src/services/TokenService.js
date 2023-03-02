@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import tokenConfig from '../config/tokenConfig';
+import AppError from '../errors/AppError';
 
 class TokenService {
   #body = null;
@@ -21,11 +22,11 @@ class TokenService {
 
   #validParams() {
     if (!this.#body.email) {
-      throw new Error('Param email not found!');
+      throw new AppError('Param email not found!');
     }
 
     if (!this.#isValidEmail()) {
-      throw new Error('Invalid email!');
+      throw new AppError('Invalid email!');
     }
   }
 
