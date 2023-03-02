@@ -6,13 +6,13 @@
   <a href="#license">License</a>
 </p>
 
-## :notebook: Sobre este projeto
+## Sobre este projeto
 
 <div id="about"></div>
 
 Teste de habilidade.
 
-## Tecnologias 🐱‍🏍🎂
+## Tecnologias 
 
 <div id="tecnologias"></div>
 
