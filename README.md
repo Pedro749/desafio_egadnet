@@ -1,7 +1,7 @@
 <h1 align="center">Egadnet Challenge</h1>
 
 <p align="center">
-  <a href="#about">Sobre este projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#about">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#license">License</a>
 </p>
@@ -10,25 +10,24 @@
 
 <div id="about"></div>
 
-Teste de habilidade.
+Teste de habilidades NodeJs.
 
-## Tecnologias 
+## Tecnologias
 
 <div id="tecnologias"></div>
 
-- [JWT](https://jwt.io/) - JSON WEB TOKEN
+- [JWT](https://jwt.io/) - JSON Web Token
 - [Axios](https://github.com/axios/axios) - HTTP Client
+- [Express](https://expressjs.com/) - Web Framework
 - [ESlint](https://eslint.org/) - Linter
 
-### Documentação, CURL, Insomnia e postman.
+## Documentação, CURL, Insomnia.
 
-<div id="doc"></div>
+Um arquivo .json está disponível na pasta **files**, podendo ser importado para o Insomnia.
 
-Um arquivo .har está disponível na pasta **files**, podendo ser importado para o Insomnia.
+Use o comando curl abaixo para testar ou utilize-o importando no Insomnia.
 
-Use o comando curl abaixo para testar ou utilize o importando no Insomnia ou Postman
-
-**_Criando TOKEN_**
+**_Criando Token_**
 
 ```curl
 curl --request POST \
